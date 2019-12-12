@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 const app = express();
+const port = process.env.PORT || 3000;
 
 //path to various directories
 const publicDir = path.join(__dirname, "../public");
@@ -77,6 +78,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("The server is running at port 3000");
+app.listen(port, () => {
+  console.log("The server is running at port " + port);
 });
